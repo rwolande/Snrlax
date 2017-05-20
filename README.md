@@ -1,6 +1,6 @@
 ![Snrlax: Simple, Fluff-less, Swift Networking](https://s-media-cache-ak0.pinimg.com/236x/36/e8/6f/36e86ffe87d0a3b0348461b9650768ed.jpg?noindex=1)
 
-# Simple, Fluff-less, Swift Networking
+# SNRLAX: Swift-Native RESTful-Optimized Library for Asynchronous Transactions
 
 [![Twitter](https://img.shields.io/badge/twitter-@SnrlaxSwift-blue.svg?style=flat)](http://twitter.com/SnrlaxSwift)
 

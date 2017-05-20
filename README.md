@@ -1,7 +1,7 @@
 ![Snrlax: Simple, Fluff-less, Swift Networking](https://s-media-cache-ak0.pinimg.com/236x/36/e8/6f/36e86ffe87d0a3b0348461b9650768ed.jpg?noindex=1)
 
 # SNRLAX
-## Swift-Native REST-compliant Library for Asynchronous Transactions
+Swift-Native REST-compliant Library for Asynchronous Transactions
 
 [![Twitter](https://img.shields.io/badge/twitter-@SnrlaxSwift-blue.svg?style=flat)](http://twitter.com/SnrlaxSwift)
 
@@ -10,7 +10,7 @@
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/cocoapods/p/Alamofire.svg?style=flat)](http://cocoadocs.org/docsets/Alamofire)-->
 
-Snrlax is an HTTP(S) networking library written entirely in Swift. It makes it impossibly easy to transact with your API, while stripping away the bloat many dependencies coat-tail into your project.
+Snrlax is _the_ leanest HTTP(S) networking library for iOS. Written entirely in Swift, Snrlax makes it wildly easy to securely exchange information with any remote API. 
 
 - [Features](#features)
 - [Extension Libraries](#extension-libraries)
@@ -18,7 +18,7 @@ Snrlax is an HTTP(S) networking library written entirely in Swift. It makes it i
 - [Communication](#communication)
 - [Installation](#installation)
 - [Usage](#usage)
-    - **Intro -** [Making a Request](#making-a-request), [Response Handling](#response-handling), [Response Validation](#response-validation), [Response Caching](#response-caching)
+    - **Intro -** [Configuration](#configuration), [Making a Request](#making-a-request), [QueryDelegate](#querydelegate), [QueryDataSource](#querydatasource)
 	- **HTTP -** [HTTP Methods](#http-methods), [Parameter Encoding](#parameter-encoding), [HTTP Headers](#http-headers), [Authentication](#authentication)
 	- **Large Data -** [Downloading Data to a File](#downloading-data-to-a-file), [Uploading Data to a Server](#uploading-data-to-a-server)
 	- **Tools -** [Statistical Metrics](#statistical-metrics), [cURL Command Output](#curl-command-output)
@@ -125,7 +125,7 @@ Run `carthage update` to build the framework and drag the built `Snrlax.framewor
 
 ### Swift Package Manager
 
-The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the `swift` compiler. Be aware that the SPM t is in early development; this said, Snrlax does support its use on supported platforms.
+The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the `swift` compiler. Be aware that the Swift Package Manager is in early development; this said, Snrlax does support its use on supported platforms.
 
 Once you have your Swift package set up, adding Snrlax as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift`.
 
@@ -143,7 +143,7 @@ dependencies: [
 
 ## Usage
 
-###Snrlax Configuration
+### Configuration
 
 A singleton for Snrlax will be your primary instance
 ```swift
@@ -162,7 +162,8 @@ Snrlax.shared.configuration!.ssl = false //Will make HTTP://YOUR_HOST requests
 ```
 
 ### Making a Request
-####Protocol - QueryDelegate
+#### Response Management
+##### QueryDelegate
 
 One of the many advantages of Snrlax is it's rather Swifty response management. Following Apple's lead, Snrlax opts to use delegatation (protocol inheritance) over closures for response management. Any class which will process and parse a JSON result must conform to the QueryDelegate protocol. Note, both QueryDelegate functions are optional so the following will compile.
 
@@ -172,7 +173,7 @@ class ViewController: UIViewController, QueryDelegate {
 }
 ```
 
-#####QueryDelegate Methods
+###### QueryDelegate Methods
 A much more practical implementation:
 ```swift
 class ViewController: UIViewController, QueryDelegate
@@ -200,7 +201,8 @@ class ViewController: UIViewController, QueryDelegate
 }
 ```
 
-### Passing Body Data
+#### Passing Body Data
+##### QueryDataSource
 
 Oftentimes, you'll want to include custom paramaters with your request. This is where Snrlax shines, both with it's Swifty signatures and it's dynamic overloading ability. A class which conforms to QueryDataSource can optionally implement a 'body()' function to return custom parameters.
 
@@ -246,7 +248,7 @@ class ViewController: UIViewController, QueryDelegate
 }
 ```
 
-### Default Delegate & Body Data
+#### Default Body Data
 
 We encourage Snrlax users to create a pair of custom classes to conform to QueryDelegate and QueryDataSource.
 

@@ -1,7 +1,8 @@
-#Snrlax
 ![Snrlax: Simple, Fluff-less, Swift Networking](https://s-media-cache-ak0.pinimg.com/236x/36/e8/6f/36e86ffe87d0a3b0348461b9650768ed.jpg?noindex=1)
 
-[![Twitter](https://img.shields.io/badge/twitter-@SnrlaxSwift-blue.svg?style=flat)](http://twitter.com/AlamofireSF)
+# Simple, Fluff-less, Swift Networking
+
+[![Twitter](https://img.shields.io/badge/twitter-@SnrlaxSwift-blue.svg?style=flat)](http://twitter.com/SnrlaxSwift)
 
 <!-- [![Build Status](https://travis-ci.org/rwolande/Snrlax.svg?branch=master)](https://travis-ci.org/rwolande/Snrlax)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Alamofire.svg)](https://img.shields.io/cocoapods/v/Alamofire.svg)

@@ -1,12 +1,12 @@
-# Snrlax
-<!-- ![Snrlax: Simple, Fluff-less, Swift Networking](https://s-media-cache-ak0.pinimg.com/236x/36/e8/6f/36e86ffe87d0a3b0348461b9650768ed.jpg?noindex=1) -->
+#Snrlax
+![Snrlax: Simple, Fluff-less, Swift Networking](https://s-media-cache-ak0.pinimg.com/236x/36/e8/6f/36e86ffe87d0a3b0348461b9650768ed.jpg?noindex=1)
+
+[![Twitter](https://img.shields.io/badge/twitter-@SnrlaxSwift-blue.svg?style=flat)](http://twitter.com/AlamofireSF)
 
 <!-- [![Build Status](https://travis-ci.org/rwolande/Snrlax.svg?branch=master)](https://travis-ci.org/rwolande/Snrlax)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Alamofire.svg)](https://img.shields.io/cocoapods/v/Alamofire.svg)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Platform](https://img.shields.io/cocoapods/p/Alamofire.svg?style=flat)](http://cocoadocs.org/docsets/Alamofire)
-[![Twitter](https://img.shields.io/badge/twitter-@AlamofireSF-blue.svg?style=flat)](http://twitter.com/AlamofireSF)
-[![Gitter](https://badges.gitter.im/Alamofire/Alamofire.svg)](https://gitter.im/Alamofire/Alamofire?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)-->
+[![Platform](https://img.shields.io/cocoapods/p/Alamofire.svg?style=flat)](http://cocoadocs.org/docsets/Alamofire)-->
 
 Snrlax is an HTTP(S) networking library written entirely in Swift. It makes it impossibly easy to transact with your API, while stripping away the bloat many dependencies coat-tail into your project.
 
@@ -57,7 +57,7 @@ Snrlax is an HTTP(S) networking library written entirely in Swift. It makes it i
 
 To keep Snrlax as the leanest and easiest-to-learn library for Swift Networking, additional component libraries have been created to bring additional functionality to your ecosystem, specifically for AWS users.
 
-- [SnrlaxS3](https://github.com/rwolande/SnrlaxS3) - An image library including image response serializers, `UIImage` and `UIImageView` extensions, custom image filters, an auto-purging in-memory cache and a priority-based image downloading system.
+- [SnrlaxS3](https://github.com/rwolande/SnrlaxS3) - An AWS S3-focused library that extends media management to support S3 buckets.
 
 ## Requirements
 

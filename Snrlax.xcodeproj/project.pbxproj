@@ -1,0 +1,402 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		568DEDD01EB31D9A0077F4D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568DEDCF1EB31D9A0077F4D6 /* AppDelegate.swift */; };
+		568DEDD21EB31D9A0077F4D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568DEDD11EB31D9A0077F4D6 /* ViewController.swift */; };
+		568DEDD71EB31D9A0077F4D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 568DEDD61EB31D9A0077F4D6 /* Assets.xcassets */; };
+		568DEDE51EB31D9A0077F4D6 /* SnrlaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568DEDE41EB31D9A0077F4D6 /* SnrlaxTests.swift */; };
+		568DEDF01EB31E070077F4D6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 568DEDEF1EB31E070077F4D6 /* Default-568h@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		568DEDE11EB31D9A0077F4D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 568DEDC41EB31D9A0077F4D6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 568DEDCB1EB31D9A0077F4D6;
+			remoteInfo = Snrlax;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		568DEDCC1EB31D9A0077F4D6 /* Snrlax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snrlax.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		568DEDCF1EB31D9A0077F4D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		568DEDD11EB31D9A0077F4D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		568DEDD61EB31D9A0077F4D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		568DEDDB1EB31D9A0077F4D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		568DEDE01EB31D9A0077F4D6 /* SnrlaxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnrlaxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		568DEDE41EB31D9A0077F4D6 /* SnrlaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnrlaxTests.swift; sourceTree = "<group>"; };
+		568DEDE61EB31D9A0077F4D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		568DEDEF1EB31E070077F4D6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		568DEDC91EB31D9A0077F4D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		568DEDDD1EB31D9A0077F4D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		568DEDC31EB31D9A0077F4D6 = {
+			isa = PBXGroup;
+			children = (
+				568DEDEF1EB31E070077F4D6 /* Default-568h@2x.png */,
+				568DEDCE1EB31D9A0077F4D6 /* Snrlax */,
+				568DEDE31EB31D9A0077F4D6 /* SnrlaxTests */,
+				568DEDCD1EB31D9A0077F4D6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		568DEDCD1EB31D9A0077F4D6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				568DEDCC1EB31D9A0077F4D6 /* Snrlax.app */,
+				568DEDE01EB31D9A0077F4D6 /* SnrlaxTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		568DEDCE1EB31D9A0077F4D6 /* Snrlax */ = {
+			isa = PBXGroup;
+			children = (
+				568DEDCF1EB31D9A0077F4D6 /* AppDelegate.swift */,
+				568DEDD11EB31D9A0077F4D6 /* ViewController.swift */,
+				568DEDD61EB31D9A0077F4D6 /* Assets.xcassets */,
+				568DEDDB1EB31D9A0077F4D6 /* Info.plist */,
+			);
+			path = Snrlax;
+			sourceTree = "<group>";
+		};
+		568DEDE31EB31D9A0077F4D6 /* SnrlaxTests */ = {
+			isa = PBXGroup;
+			children = (
+				568DEDE41EB31D9A0077F4D6 /* SnrlaxTests.swift */,
+				568DEDE61EB31D9A0077F4D6 /* Info.plist */,
+			);
+			path = SnrlaxTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		568DEDCB1EB31D9A0077F4D6 /* Snrlax */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 568DEDE91EB31D9A0077F4D6 /* Build configuration list for PBXNativeTarget "Snrlax" */;
+			buildPhases = (
+				568DEDC81EB31D9A0077F4D6 /* Sources */,
+				568DEDC91EB31D9A0077F4D6 /* Frameworks */,
+				568DEDCA1EB31D9A0077F4D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Snrlax;
+			productName = Snrlax;
+			productReference = 568DEDCC1EB31D9A0077F4D6 /* Snrlax.app */;
+			productType = "com.apple.product-type.application";
+		};
+		568DEDDF1EB31D9A0077F4D6 /* SnrlaxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 568DEDEC1EB31D9A0077F4D6 /* Build configuration list for PBXNativeTarget "SnrlaxTests" */;
+			buildPhases = (
+				568DEDDC1EB31D9A0077F4D6 /* Sources */,
+				568DEDDD1EB31D9A0077F4D6 /* Frameworks */,
+				568DEDDE1EB31D9A0077F4D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				568DEDE21EB31D9A0077F4D6 /* PBXTargetDependency */,
+			);
+			name = SnrlaxTests;
+			productName = SnrlaxTests;
+			productReference = 568DEDE01EB31D9A0077F4D6 /* SnrlaxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		568DEDC41EB31D9A0077F4D6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Ryan Wolande";
+				TargetAttributes = {
+					568DEDCB1EB31D9A0077F4D6 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					568DEDDF1EB31D9A0077F4D6 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 568DEDCB1EB31D9A0077F4D6;
+					};
+				};
+			};
+			buildConfigurationList = 568DEDC71EB31D9A0077F4D6 /* Build configuration list for PBXProject "Snrlax" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 568DEDC31EB31D9A0077F4D6;
+			productRefGroup = 568DEDCD1EB31D9A0077F4D6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				568DEDCB1EB31D9A0077F4D6 /* Snrlax */,
+				568DEDDF1EB31D9A0077F4D6 /* SnrlaxTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		568DEDCA1EB31D9A0077F4D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				568DEDD71EB31D9A0077F4D6 /* Assets.xcassets in Resources */,
+				568DEDF01EB31E070077F4D6 /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		568DEDDE1EB31D9A0077F4D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		568DEDC81EB31D9A0077F4D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				568DEDD21EB31D9A0077F4D6 /* ViewController.swift in Sources */,
+				568DEDD01EB31D9A0077F4D6 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		568DEDDC1EB31D9A0077F4D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				568DEDE51EB31D9A0077F4D6 /* SnrlaxTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		568DEDE21EB31D9A0077F4D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 568DEDCB1EB31D9A0077F4D6 /* Snrlax */;
+			targetProxy = 568DEDE11EB31D9A0077F4D6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		568DEDE71EB31D9A0077F4D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		568DEDE81EB31D9A0077F4D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		568DEDEA1EB31D9A0077F4D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Snrlax/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ryanwolande.--wolande--template--key--";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		568DEDEB1EB31D9A0077F4D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Snrlax/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ryanwolande.--wolande--template--key--";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		568DEDED1EB31D9A0077F4D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SnrlaxTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ryanwolande.--wolande--template--key--Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Snrlax.app/Snrlax";
+			};
+			name = Debug;
+		};
+		568DEDEE1EB31D9A0077F4D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SnrlaxTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ryanwolande.--wolande--template--key--Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Snrlax.app/Snrlax";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		568DEDC71EB31D9A0077F4D6 /* Build configuration list for PBXProject "Snrlax" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				568DEDE71EB31D9A0077F4D6 /* Debug */,
+				568DEDE81EB31D9A0077F4D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		568DEDE91EB31D9A0077F4D6 /* Build configuration list for PBXNativeTarget "Snrlax" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				568DEDEA1EB31D9A0077F4D6 /* Debug */,
+				568DEDEB1EB31D9A0077F4D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		568DEDEC1EB31D9A0077F4D6 /* Build configuration list for PBXNativeTarget "SnrlaxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				568DEDED1EB31D9A0077F4D6 /* Debug */,
+				568DEDEE1EB31D9A0077F4D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 568DEDC41EB31D9A0077F4D6 /* Project object */;
+}

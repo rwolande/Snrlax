@@ -304,7 +304,7 @@ Handling the `Response` of a `Request` made in Snrlax is straight forward. All k
 --result
 The key will be disregarded and the underlying data will be found at the root level. This minimizes much of the 'Swift Optional Dance' which also keeping your data concise and most easily processed.
 
-####Add exmaples
+#### Add examples
 
 <!-- In the above example, the `responseJSON` handler is appended to the `Request` to be executed once the `Request` is complete. Rather than blocking execution to wait for a response from the server, a [callback](http://en.wikipedia.org/wiki/Callback_%28computer_programming%29) in the form of a closure is specified to handle the response once it's received. The result of a request is only available inside the scope of a response closure. Any execution contingent on the response or data received from the server must be done within a response closure.-->
 

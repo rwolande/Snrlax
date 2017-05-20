@@ -10,7 +10,7 @@ Swift-Native REST-compliant Library for Asynchronous Transactions
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/cocoapods/p/Alamofire.svg?style=flat)](http://cocoadocs.org/docsets/Alamofire)-->
 
-Snrlax is _the_ leanest HTTP(S) networking library for iOS. Written entirely in Swift, Snrlax makes it wildly easy to securely exchange information with any remote API. 
+Snrlax is **the leanest HTTP(S) networking library for iOS**. Written entirely in Swift, Snrlax makes it wildly easy to **securely** exchange information with any remote API. 
 
 - [Features](#features)
 - [Extension Libraries](#extension-libraries)
@@ -18,10 +18,10 @@ Snrlax is _the_ leanest HTTP(S) networking library for iOS. Written entirely in 
 - [Communication](#communication)
 - [Installation](#installation)
 - [Usage](#usage)
-    - **Intro -** [Configuration](#configuration), [Making a Request](#making-a-request), [QueryDelegate](#querydelegate), [QueryDataSource](#querydatasource)
-	- **HTTP -** [HTTP Methods](#http-methods), [Parameter Encoding](#parameter-encoding), [HTTP Headers](#http-headers), [Authentication](#authentication)
-	- **Large Data -** [Downloading Data to a File](#downloading-data-to-a-file), [Uploading Data to a Server](#uploading-data-to-a-server)
-	- **Tools -** [Statistical Metrics](#statistical-metrics), [cURL Command Output](#curl-command-output)
+    - **Intro** [Configuration](#configuration), [Making a Request](#making-a-request), [QueryDelegate](#querydelegate), [QueryDataSource](#querydatasource)
+	- **HTTP** [HTTP Methods](#http-methods), [Parameter Encoding](#parameter-encoding), [HTTP Headers](#http-headers), [Authentication](#authentication)
+	- **Large Data** [Downloading Data to a File](#downloading-data-to-a-file), [Uploading Data to a Server](#uploading-data-to-a-server)
+	- **Tools** [Statistical Metrics](#statistical-metrics), [cURL Command Output](#curl-command-output)
 - [Advanced Usage](#advanced-usage)
 	- **URL Session -** [Session Manager](#session-manager), [Session Delegate](#session-delegate), [Request](#request)
 	- **Routing -** [Routing Requests](#routing-requests), [Adapting and Retrying Requests](#adapting-and-retrying-requests)

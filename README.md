@@ -21,7 +21,7 @@ Developed for both ease of use and familiarity, Snrlax uses concise syntax and m
 - [Communication](#communication)
 - [Installation](#installation)
 - [Usage](#usage)
-    - **Intro** [Configuration](#configuration), [Making a Request](#making-a-request), [Response Handling](#response-handing), [Response Validation](#response-validation), [Response Caching](#response-caching)
+    - **Intro** [Configuration](#configuration), [Making a Request](#making-a-request), [Response Handling](#handle-a-response), [Response Validation](#response-validation), [Response Caching](#response-caching)
 - [Open Radars](#open-radars)
 - [FAQ](#faq)
 - [Credits](#credits)
@@ -167,7 +167,7 @@ import Snrlax
 **0-1x per request**
 
 4) [Make Request](#making-a-request)
-5) [Handle Response](#response-handing)
+5) [Handle Response](#handle-a-response)
 
 ### Configuration
 

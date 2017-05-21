@@ -157,6 +157,7 @@ dependencies: [
 To use Snrlax, there are a few easy steps you'll want to follow:
 
 **1x per project**
+
 1) [Install Snrlax](#installation)
 2) Import Snrlax in relevant Swift scripts
 ```swift
@@ -165,6 +166,7 @@ import Snrlax
 3) [Configure](#configuration) your instance to reflect your API.
 
 **0-1x per request**
+
 4) [Make Your Request](#making-a-request)
 5) [Manage Your Result](#response-management)
 
@@ -212,7 +214,7 @@ class ViewController: UIViewController, QueryDataSource
 }
 ```
 
-Including the data_source parameter:
+Including the data_source parameter with `request()`:
 ```swift
 class ViewController: UIViewController, QueryDataSource
 {
@@ -276,7 +278,8 @@ class ViewController: UIViewController, QueryDelegate
 ```
 
 Handling the `Response` of a `Request` made in Snrlax is straight forward. All keys from your API will be root-keys of the body `Dictionary` passed in `successful_query()`.
--In the event a `JSONArray` is returned from your API at the root level, the body will have 1-root key: "data", which will map to your array values.
+
+--In the event a `JSONArray` is returned from your API at the root level, the body will have 1-root key: "data", which will map to your array values.
 >At least one key will always be included in Underlying data will be found at the root level. This minimizes much of the 'Swift Optional Dance' which also keeping your data concise and most easily processed.
 
 Finally, an actually practical implementation of `successful_query()`

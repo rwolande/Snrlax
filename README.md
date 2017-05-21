@@ -53,7 +53,8 @@ Developed for both ease of use and familiarity, Snrlax uses concise syntax and m
 	- [x] Much like Snorlax multitasks while RESTing, your application must be multi-thread compliant. This pushes developers to write UX-considerate code.
 - [x] Dynamic response managment, through both **polymorphism** and/or **delegation**
 
-**v1.0 Release promises*
+**v1.0 Release Promises**
+
 - [ ] Download File using Request or Resume Data
 	- [x] Request
 	- [ ] Resume Data
@@ -74,9 +75,10 @@ Developed for both ease of use and familiarity, Snrlax uses concise syntax and m
 
 ## Extension Libraries
 
-While Snrlax will unequivocally remain a "no fluff" library for Swift Networking, additional components have been created to bring additional functionality to your ecosystem, specifically for AWS users. These can additionally be included in your project, with specific instructions within each repository.
+While Snrlax will unequivocally remain a "no fluff" library for Swift Networking, additional components have been created to compliment the Snrlax ecosystem. These can additionally be included in your project, with specific instructions within each repository.
 
 - [SnrlaxS3](https://github.com/rwolande/SnrlaxS3) - An AWS S3-focused library that extends media management to support S3 buckets.
+- [SnrlaxUI](https://github.com/rwolande/SnrlaxUI) - A User Interface library that extends UIKit staples to optionally bind with data, while also providing elegant widgets for image, gif, & video media.
 
 ## Requirements
 
@@ -167,62 +169,27 @@ A singleton for Snrlax will be your primary instance
 Snrlax.shared
 ```
 
-It can be configured by assigning an instane of SnrlaxServiceConfiguration
+It can be configured by assigning an instance of SnrlaxServiceConfiguration
 ```swift
 let YOUR_HOST_DOMAIN = "api.snrlax.com/"
 Snrlax.shared.configuration = SnrlaxServiceConfiguration(host: YOUR_HOST_DOMAIN)
 ```
--- HTTPS will be assumed. We encourage you to use SSL (HTTPS) for all data transfers. In the event you must use an unecrypted connection, you can turn SSL off in your configuration
+HTTPS is assumed by default. We encourage you to use SSL (HTTPS) for all data transfers. In the event you must use an unecrypted connection, you can turn SSL off in your configuration
 
 ```swift
-Snrlax.shared.configuration!.ssl = false //Will make HTTP://YOUR_HOST requests
+Snrlax.shared.configuration!.ssl = false //HTTP://\(YOUR_HOST) Requests
 ```
 
 ### Making a Request
-#### Response Management
-##### QueryDelegate
 
-One of the many advantages of Snrlax is it's rather Swifty response management. Following Apple's lead, Snrlax opts to use delegatation (protocol inheritance) over closures for response management. Any class which will process and parse a JSON result must conform to the QueryDelegate protocol. Note, both QueryDelegate functions are optional so the following will compile.
-
-
-```swift
-class ViewController: UIViewController, QueryDelegate {
-}
-```
-
-###### QueryDelegate Methods
-A much more practical implementation:
-```swift
-class ViewController: UIViewController, QueryDelegate
-{
-
-        override func viewDidLoad()
-        {
-                super.viewDidLoad()
-                
-                let endpoint = SnrlaxEndpoint(literal: "user/2") //Domain-specific route
-                Snrlax.shared.request(endpoint: endpoint, parser_delegate: self) //parser_delegate -> QueryDelegate
-        }
-        
-        //Optional
-        func successful_query(query: SnrlaxQuery, body: [String : AnyObject])
-        {
-                print(body)
-        }
-        
-        //Optional
-        func failed_query(query: SnrlaxQuery, error: NSError?)
-        {
-                
-        }
-}
-```
-
-#### Passing Body Data
-##### QueryDataSource
+#### Passing Body Data: QueryDataSource
 
 Oftentimes, you'll want to include custom paramaters with your request. This is where Snrlax shines, both with it's Swifty signatures and it's dynamic overloading ability. A class which conforms to QueryDataSource can optionally implement a 'body()' function to return custom parameters.
 
+##### QueryDataSource Methods
+```swift
+func body(query: SnrlaxQuery) -> [String:Any]
+```
 
 ```swift
 class ViewController: UIViewController, QueryDataSource
@@ -265,12 +232,58 @@ class ViewController: UIViewController, QueryDelegate
 }
 ```
 
-#### Default Body Data
+#### Response Management: QueryDelegate
+
+One of the many advantages of Snrlax is it's rather Swifty response management. Following Apple's lead, Snrlax opts to use delegatation (protocol inheritance) over closures for response management. Any class which will process and parse a JSON result must conform to the QueryDelegate protocol.
+
+##### QueryDelegate Methods
+```swift
+func successful_query(query: SnrlaxQuery, body: [String : AnyObject])
+func failed_query(query: SnrlaxQuery, error: NSError?)
+```
+
+A much more practical implementation:
+```swift
+class ViewController: UIViewController, QueryDelegate
+{
+
+        override func viewDidLoad()
+        {
+                super.viewDidLoad()
+                
+                let endpoint = SnrlaxEndpoint(literal: "user/2") //Domain-specific route
+                Snrlax.shared.request(endpoint: endpoint, parser_delegate: self) //parser_delegate -> QueryDelegate
+        }
+        
+        //Optional
+        func successful_query(query: SnrlaxQuery, body: [String : AnyObject])
+        {
+                print(body)
+        }
+        
+        //Optional
+        func failed_query(query: SnrlaxQuery, error: NSError?)
+        {
+                
+        }
+}
+```
+
+Handling the `Response` of a `Request` made in Snrlax is straight forward. All keys from your API will be root-keys of the body `Dictionary` passed in successful_query().
+-In the event a `JSONArray` is returned from your API at the root level, the body will have 1-root key: "data", which will map to your array values.
+>At least one key will always be included in Underlying data will be found at the root level. This minimizes much of the 'Swift Optional Dance' which also keeping your data concise and most easily processed.
+
+>Both QueryDelegate functions are optional so all conforming classes will compile.
+```swift
+class ViewController: UIViewController, QueryDelegate, QueryDataSource {
+}
+```
+
+#### Inheriting QueryDataSource & QueryDelegate
 
 We encourage Snrlax users to create a pair of custom classes to conform to QueryDelegate and QueryDataSource.
 
-
-#### Default Body Data
+##### Default Body Data
 In the case you consistently provide default body parameters, Snrlax offers a boiler-plate minimal solution by always including a body when Snrlax.shared.global_data_source is set.
 -In the event you pass a data_source to the request() method, both bodies will be included as one combined body. If there is a key collision, the passed QueryDataSource will take precedence over the global QueryDataSource.
 
@@ -290,7 +303,7 @@ public class DefaultQueryDataSource: QueryDataSource
 Snrlax.shared.global_data_source = DefaultQueryDataSource.shared
 ```
 
-#### Default Response Delegate
+##### Default Response Delegate
 It is highly encouraged that you also have a global response delegate. To provide a 2017-quality user experience, users expected heuristics indicating different states like success, pending, and failed. This is particularly useful with the modern UITableView "Scroll Down to Refresh" experience. You might find the following as a good template:
 
 
@@ -313,20 +326,6 @@ public class DefaultQueryDelegate: QueryDelegate
 Snrlax.shared.global_parser_delegate = DefaultQueryDelegate.shared
 ```
 -Snrlax.shared.global_parser_delegate will process the query result before a query-specific delegate is called. Notably, this is done on a background thread, so you can safely assume all data modified in your global class. This cleanly seperates your data management to allow you to update the interface on the main thread within your custom handler method.
-
-### Response Handling
-
-Handling the `Response` of a `Request` made in Snrlax is straight forward. All keys from your API will be root-keys of the body map passed in successful_query().
--In the event an array is returned from your API, the body will have 1-root key: "data", which will map to your array values.
--In the event a single key is passed which is either:
---data
---body
---result
-The key will be disregarded and the underlying data will be found at the root level. This minimizes much of the 'Swift Optional Dance' which also keeping your data concise and most easily processed.
-
-#### Add examples
-
-<!-- In the above example, the `responseJSON` handler is appended to the `Request` to be executed once the `Request` is complete. Rather than blocking execution to wait for a response from the server, a [callback](http://en.wikipedia.org/wiki/Callback_%28computer_programming%29) in the form of a closure is specified to handle the response once it's received. The result of a request is only available inside the scope of a response closure. Any execution contingent on the response or data received from the server must be done within a response closure.-->
 
 > Networking with Snrlax is done _asynchronously_. Asynchronous data request management is an integral aspect of modern application development and, in agreement with [Apple](https://developer.apple.com/library/ios/qa/qa1693/_index.html), Snrlax was developed with this in mind.
 

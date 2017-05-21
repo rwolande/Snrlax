@@ -468,11 +468,12 @@ There are currently no open radars for Snrlax! Good job guys!
 ## FAQ
 
 >Where does the name come from?
+
 `SNRLAX` is an acronym for **S**wift-**N**ative **R**EST-compliant **L**ibrary for **A**synchronous **T**ransactions. We also couldn't resist the play on words with REST.
 
 ## Credits
 
-Snrlax is created and maintained by Ryan Wolande & Friends [Ryan Wolande & Friends](http://ryanwolande.com). You can follow the development cycle on Twitter at [@SnrlaxSwift](https://twitter.com/SnrlaxSwift) for project updates, releases, and of course feel free to tweet at us for feedback, requests, or to bring attention to anything else involving the Snrlax library.
+Snrlax is created and maintained by [Ryan Wolande & Friends](http://ryanwolande.com). You can follow the development cycle on Twitter at [@SnrlaxSwift](https://twitter.com/SnrlaxSwift) for project updates and releases. Feel free to tweet at us for feedback, requests, or to bring attention to anything else involving the Snrlax library.
 
 ### Security Disclosure
 

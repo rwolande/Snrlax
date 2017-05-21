@@ -184,7 +184,7 @@ Snrlax.shared.configuration!.ssl = false //HTTP://\(YOUR_HOST) Requests
 
 #### Passing Body Data: QueryDataSource
 
-Oftentimes, you'll want to include custom paramaters with your request. This is where Snrlax shines, both with it's Swifty signatures and it's dynamic overloading ability. A class which conforms to QueryDataSource can optionally implement a 'body()' function to return custom parameters.
+Oftentimes, you'll want to include custom paramaters with your request. This is where Snrlax shines, both with it's Swifty signatures and it's dynamic overloading ability. A class which conforms to QueryDataSource can optionally implement a `body()` function to return custom parameters.
 
 ##### QueryDataSource Methods
 ```swift
@@ -269,7 +269,7 @@ class ViewController: UIViewController, QueryDelegate
 }
 ```
 
-Handling the `Response` of a `Request` made in Snrlax is straight forward. All keys from your API will be root-keys of the body `Dictionary` passed in successful_query().
+Handling the `Response` of a `Request` made in Snrlax is straight forward. All keys from your API will be root-keys of the body `Dictionary` passed in `successful_query()`.
 -In the event a `JSONArray` is returned from your API at the root level, the body will have 1-root key: "data", which will map to your array values.
 >At least one key will always be included in Underlying data will be found at the root level. This minimizes much of the 'Swift Optional Dance' which also keeping your data concise and most easily processed.
 
@@ -285,7 +285,7 @@ We encourage Snrlax users to create a pair of custom classes to conform to Query
 
 ##### Default Body Data
 In the case you consistently provide default body parameters, Snrlax offers a boiler-plate minimal solution by always including a body when Snrlax.shared.global_data_source is set.
--In the event you pass a data_source to the request() method, both bodies will be included as one combined body. If there is a key collision, the passed QueryDataSource will take precedence over the global QueryDataSource.
+-In the event you pass a data_source to the `request()` method, both bodies will be included as one combined body. If there is a key collision, the passed QueryDataSource will take precedence over the global QueryDataSource.
 
 
 ```swift

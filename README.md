@@ -25,7 +25,7 @@ Developed for both ease of use and familiarity, Snrlax uses concise syntax and m
         - [Response Handling](#handle-a-response)
         - [Response Validation](#response-validation)
         - [Response Caching](#response-caching)
-    - [Media Transactions](#media-networking)
+    - [Media Transactions](#media-transactions)
 - [Extension Libraries](#extension-libraries)
 - [Communication](#communication)
 - [Open Radars](#open-radars)

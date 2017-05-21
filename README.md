@@ -21,7 +21,11 @@ Developed for both ease of use and familiarity, Snrlax uses concise syntax and m
 - [Communication](#communication)
 - [Installation](#installation)
 - [Usage](#usage)
-    - **Intro** [Configuration](#configuration), [Making a Request](#making-a-request), [Response Handling](#handle-a-response), [Response Validation](#response-validation), [Response Caching](#response-caching)
+    - [Configuration](#configuration)
+    - [Making a Request](#making-a-request)
+    - [Response Handling](#handle-a-response)
+    - [Response Validation](#response-validation)
+    - [Response Caching](#response-caching)
 - [Open Radars](#open-radars)
 - [FAQ](#faq)
 - [Credits](#credits)
@@ -42,7 +46,7 @@ Developed for both ease of use and familiarity, Snrlax uses concise syntax and m
 - [x] Authentication with URLCredential
 - [x] _Enforced_ asynchronious transactions
 	- [x] Much like Snorlax multitasks while RESTing, your application must be multi-thread compliant. This pushes developers to write UX-considerate code.
-- [x] Dynamic response managment, through both **polymorphism** and/or **delegation**
+- [x] Dynamic response management, through both **polymorphism** and/or **delegation**
 
 **v1.0 Release Promises**
 
@@ -213,7 +217,7 @@ class ViewController: UIViewController, QueryDataSource
 }
 ```
 
-Including the data_source parameter with `request()`:
+Including the `data_source` parameter with `request()`:
 ```swift
 class ViewController: UIViewController, QueryDataSource
 {

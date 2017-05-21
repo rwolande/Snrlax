@@ -481,7 +481,7 @@ To download an image, call the `pull` method of your shared instance: `Snrlax.sh
 
 The first argument is a required string and the second is an enum `SnrlaxMediaManager.MediaType`. This is specified so the correct cache is used, and so thumbnails can be used if available.
 
-Finally, optionally pass a UIImageView, which will be updated _asynchronously_. Unlike alternative libraries, when an image download is complete, Snrlax ensures the ImageView still wants the same image it started with. This makes Snrlax the ideal library for image displaying within `UITableView`s.
+Finally, optionally pass a UIImageView, which will be updated _asynchronously_. Unlike alternative libraries, when an image download is complete, Snrlax ensures the ImageView still wants the same image, making it `UITableViewCell`-recycling-safe. Accordingly, Snrlax is a perfect library for image displaying within `UITableView`s. Again, this forces developers to write UX-considerate code.
 
 ```swift
 let IMAGE_URL = "https://static1.squarespace.com/static/5563f674e4b024c2e33e24e5/576fb637b3db2bd35f665512/576fb64bff7c50a6aeabf726/1466938964385/Globs.jpg?format=1500w"

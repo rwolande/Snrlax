@@ -13,7 +13,7 @@
 
 **Snrlax** is the leanest HTTP(S) networking library for iOS, making it wildly easy to _securely_ exchange information with any remote API. 
 
-Developed for both ease of use and familiarity, Snrlax uses concise syntax and method delegation to fit in swimmingly alongside the Swift 3 standard library. This allows new iOS developers to develop future-leaning habits while still allowing experienced developers to follow patterns they are already comfortable with.
+Developed for both ease of use and familiarity, Snrlax uses concise syntax and method delegation to fit in swimmingly alongside the Swift 3 standard library. This allows new iOS developers to adapt future-leaning habits while still allowing experienced developers to follow patterns they are already comfortable with.
 
 - [Features](#features)
 - [Extension Libraries](#extension-libraries)
@@ -41,33 +41,40 @@ Developed for both ease of use and familiarity, Snrlax uses concise syntax and m
 - [x] Written originally and entirely in Swift
 	- [x] Removes need for Obj-C Bridging
 	- [x] Leaves behind outdated patterns found in libraries based on pre-Swift practices
+	- [x] Much smaller than Alamofire, AFNetworking, and Firebase
+- [x] HTTP Secure by Default
+- [x] Network Activity Indicator Management by Default
+	- [x] Dynamically display when requests are in progress and hide when all requests are complete or suspended
+	- [ ] Optional delegate for additional custom 'loading' widgets (UI elements)
+- [x] HTTP Response Code Validation by Default
+- [x] Protocols for variable request results
 - [x] Authentication with URLCredential
-- [x] Swifty Protocols for variant responses (as opposed to single closures)
--	 [ ] Upload and Download Progress Methods
-- [x] _Enforced _asynchronious_ transactions
+- [x] _Enforced_ asynchronious transactions
 	- [x] Much like Snorlax multitasks while RESTing, your application must be multi-thread compliant. This pushes developers to write UX-considerate code.
 - [x] Dynamic response managment, through both **polymorphism** and/or **delegation**
+
+**v1.0 Release promises*
 - [ ] Download File using Request or Resume Data
 	- [x] Request
 	- [ ] Resume Data
 - [ ] Upload File / Data / Stream / MultipartFormData 
 - [ ] Chainable Request / Response Methods
+	- [ ] Network request -> New Task
+	- [ ] File download -> New Task
+	- [ ] File upload -> New Task
 - [ ] Dynamically Adapt and Retry Requests
 - [ ] TLS Certificate and Public Key Pinning
 - [ ] Network Reachability
-- [ ] Comprehensive Unit and Integration Test Coverage
 - [ ] User Interface Bindings
 	- [x] UIImageView
 	- [ ] UITableView
 	- [ ] SnrlaxVideoView
-- [x] HTTP Secure by Default 
-- [x] HTTP Response Code Validation by Default
-- [x] Network Activity Indicator Management by Default
+- [ ] Comprehensive Unit and Integration Test Coverage
 - [ ] [Complete Documentation](http://cocoadocs.org/docsets/Snrlax)
 
 ## Extension Libraries
 
-To keep Snrlax as the leanest and easiest-to-learn library for Swift Networking, additional component libraries have been created to bring additional functionality to your ecosystem, specifically for AWS users.
+While Snrlax will unequivocally remain a "no fluff" library for Swift Networking, additional components have been created to bring additional functionality to your ecosystem, specifically for AWS users. These can additionally be included in your project, with specific instructions within each repository.
 
 - [SnrlaxS3](https://github.com/rwolande/SnrlaxS3) - An AWS S3-focused library that extends media management to support S3 buckets.
 

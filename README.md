@@ -51,16 +51,19 @@ Written entirely and originally in Swift, Snrlax
 ## Features
 
 - [x] Written originally and entirely in Swift
-- [x] HTTP Secure by Default 
-- [x] Download File using Request; optimized for Images and Video
-<!-- - [x] Download File using Request or Resume Data -->
-- [x] Swifty Protocols for variant responses (as opposed to single closures)
-- [ ] Chainable Request / Response Methods (Coming)
-- [ ] Upload File / Data / Stream / MultipartFormData (Coming)
+	- [x] Removes need for Obj-C Bridging
+	- [x] Leaves behind outdated patterns found in libraries based on pre-Swift practices
 - [x] Authentication with URLCredential
-- [x] HTTP Response Code Validation by Default
-- [x] Network Activity Indicator Management by Default
-- [ ] Upload and Download Progress Closures with Progress
+- [x] Swifty Protocols for variant responses (as opposed to single closures)
+-	 [ ] Upload and Download Progress Methods
+- [x] _Enforced _asynchronious_ transactions
+	- [x] Much like Snorlax multitasks while RESTing, your application must be multi-thread compliant. This pushes developers to write UX-considerate code.
+- [x] Dynamic response managment, through both **polymorphism** and/or **delegation**
+- [ ] Download File using Request or Resume Data
+	- [x] Request
+	- [ ] Resume Data
+- [ ] Upload File / Data / Stream / MultipartFormData 
+- [ ] Chainable Request / Response Methods
 - [ ] Dynamically Adapt and Retry Requests
 - [ ] TLS Certificate and Public Key Pinning
 - [ ] Network Reachability
@@ -69,6 +72,9 @@ Written entirely and originally in Swift, Snrlax
 	- [x] UIImageView
 	- [ ] UITableView
 	- [ ] SnrlaxVideoView
+- [x] HTTP Secure by Default 
+- [x] HTTP Response Code Validation by Default
+- [x] Network Activity Indicator Management by Default
 - [ ] [Complete Documentation](http://cocoadocs.org/docsets/Snrlax)
 
 ## Extension Libraries

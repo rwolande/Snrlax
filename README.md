@@ -20,10 +20,12 @@ Developed for both ease of use and familiarity, Snrlax uses concise syntax and m
 - [Installation](#installation)
 - [Usage](#usage)
     - [Configuration](#configuration)
-    - [Making a Request](#making-a-request)
-    - [Response Handling](#handle-a-response)
-    - [Response Validation](#response-validation)
-    - [Response Caching](#response-caching)
+    - [API Networking](#api-networking)
+        - [Making a Request](#making-a-request)
+        - [Response Handling](#handle-a-response)
+        - [Response Validation](#response-validation)
+        - [Response Caching](#response-caching)
+    - [Media Transactions](#media-networking)
 - [Extension Libraries](#extension-libraries)
 - [Communication](#communication)
 - [Open Radars](#open-radars)
@@ -31,7 +33,7 @@ Developed for both ease of use and familiarity, Snrlax uses concise syntax and m
 - [Credits](#credits)
 - [License](#license)
 
-## Features
+# Features
 
 - [x] Written originally and entirely in Swift
 	- [x] Removes need for Obj-C Bridging
@@ -69,15 +71,15 @@ Developed for both ease of use and familiarity, Snrlax uses concise syntax and m
 - [ ] Comprehensive Unit and Integration Test Coverage
 - [ ] [Complete Documentation](http://cocoadocs.org/docsets/Snrlax)
 
-## Requirements
+# Requirements
 
 - iOS 8.0+
 - Xcode 8.1+
 - Swift 3.0+
 
-## Installation
+# Installation
 
-### CocoaPods
+## CocoaPods
 
 [CocoaPods](http://cocoapods.org) is a centralized dependency manager for Cocoa projects. Assuming you have Ruby, you can install it with the following command:
 
@@ -104,7 +106,7 @@ Then, run the following command:
 $ pod install
 ```
 
-### Carthage
+## Carthage
 
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
 
@@ -123,7 +125,7 @@ github "rwolande/Snrlax" ~> 0.1
 
 Run `carthage update` to build the framework and drag the built `Snrlax.framework` into your Xcode project.
 
-### Swift Package Manager
+## Swift Package Manager
 
 The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the `swift` compiler. Be aware that the Swift Package Manager is in early development; this said, Snrlax does support its use on supported platforms.
 
@@ -135,13 +137,17 @@ dependencies: [
 ]
 ```
 
-#### Embedded Framework
+### Embedded Framework
 
 - Due to the nature of a Snrlax being a quick and nimble networking library, we anticipate many developers using Snrlax as they learn Swift. Due to the nuances and bloat of embedded frameworks, we strongly discourage their use in general and ask only professionals consider their use with Snrlax.
 
 ---
 
-## Usage
+# Usage
+
+Snrlax is a great library for API networking as well as media transactions.
+
+## API Networking
 
 To use Snrlax, there are a few easy steps you'll want to follow:
 
@@ -464,15 +470,32 @@ This allows common RESTful practices to be mirrored in Swift. Routes can be recy
 
 > The `SnrlaxEndpoint.rest_method` parameter defaults to `.get`.
 
+## Media Transactions
 
-## Extension Libraries
+`Snrlax` provides it's own caches, `SnrlaxMediaCache`. `SnrlaxMediaManager` has an array of `SnrlaxMediaCache`s. By default, there is one for thumbnails, one for higher-quality images, and one for video data. When you make a request for an image that you have not yet cached, if a corresponding thumbnail has been cached it will be used until the higher-quality image is fully received.
+
+### Downloading Media
+
+To download an image, call the `pull` method of your shared instance: `Snrlax.shared.media_manager.pull()`.
+
+The first argument is a required string and the second is an enum `SnrlaxMediaManager.MediaType`. This is specified so the correct cache is used, and so thumbnails can be used if available.
+
+Finally, optionally pass a UIImageView, which will be updated _asynchronously_. Unlike alternative libraries, when an image download is complete, Snrlax ensures the ImageView still wants the same image it started with. This makes Snrlax the ideal library for image displaying within `UITableView`s.
+
+```swift
+let IMAGE_URL = "https://static1.squarespace.com/static/5563f674e4b024c2e33e24e5/576fb637b3db2bd35f665512/576fb64bff7c50a6aeabf726/1466938964385/Globs.jpg?format=1500w"
+                
+Snrlax.shared.media_manager.pull(endpoint: IMAGE_URL, media_type: .image, image_view: image_view)
+```
+
+# Extension Libraries
 
 While Snrlax will unequivocally remain a "no fluff" library for Swift Networking, additional components have been created to compliment the Snrlax ecosystem. These can additionally be included in your project, with specific instructions within each repository.
 
 - [SnrlaxS3](https://github.com/rwolande/SnrlaxS3) - An AWS S3-focused library that extends media management to support S3 buckets.
 - [SnrlaxUI](https://github.com/rwolande/SnrlaxUI) - A User Interface library that extends UIKit staples to optionally bind with data, while also providing elegant widgets for image, gif, & video media.
 
-## Communication
+# Communication
 
 <!-- - If you **need help**, use [Stack Overflow](http://stackoverflow.com/questions/tagged/snrlax). (Tag 'snrlax') -->
 <!-- - If you'd like to **ask a general question**, use [Stack Overflow](http://stackoverflow.com/questions/tagged/snrlax). -->
@@ -480,24 +503,24 @@ While Snrlax will unequivocally remain a "no fluff" library for Swift Networking
 - If you **have a feature request**, open an issue.
 - If you **want to contribute**, submit a pull request.
 
-## Open Radars
+# Open Radars
 
 There are currently no open radars for Snrlax! Good job guys!
 
-## FAQ
+# FAQ
 
 >Where does the name come from?
 
 `SNRLAX` is an acronym for **S**wift-**N**ative **R**EST-compliant **L**ibrary for **A**synchronous **T**ransactions. We also couldn't resist the play on words with REST.
 
-## Credits
+# Credits
 
 Snrlax is created and maintained by [Ryan Wolande & Friends](http://ryanwolande.com). You can follow the development cycle on Twitter at [@SnrlaxSwift](https://twitter.com/SnrlaxSwift) for project updates and releases. Feel free to tweet at us for feedback, requests, or to bring attention to anything else involving the Snrlax library.
 
-### Security Disclosure
+## Security Disclosure
 
 If you believe you have identified a security vulnerability with Snrlax, you should report it as soon as possible via email to security@snrlax.com. Please do not post it to a public issue tracker.
 
-## License
+# License
 
 Snrlax is released under the MIT license. [See LICENSE](https://github.com/rwolande/Snrlax/blob/master/LICENSE.md) for details.

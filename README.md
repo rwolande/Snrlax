@@ -323,8 +323,9 @@ class ViewController: UIViewController, QueryDelegate, QueryDataSource {
 ```
 
 ##### Default Body Data
-In the case you consistently provide default body parameters, Snrlax offers a boiler-plate minimal solution by always including a body when Snrlax.shared.global_data_source is set.
--In the event you pass a data_source to the `request()` method, both bodies will be included as one combined body. If there is a key collision, the passed QueryDataSource will take precedence over the global QueryDataSource.
+In the case you consistently provide default body parameters, Snrlax offers a boiler-plate-minimizing solution by always including a body assuming: `Snrlax.shared.global_data_source != nil`.
+
+- In the event you pass a `data_source` to the `request()` method, both bodies will be included as one combined body. If there is a key collision, the passed QueryDataSource will take precedence over the global QueryDataSource.
 
 
 ```swift

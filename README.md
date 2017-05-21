@@ -16,9 +16,7 @@
 Developed for both ease of use and familiarity, Snrlax uses concise syntax and method delegation to fit in swimmingly alongside the Swift 3 standard library. This allows new iOS developers to adapt future-leaning habits while still allowing experienced developers to follow patterns they are already comfortable with.
 
 - [Features](#features)
-- [Extension Libraries](#extension-libraries)
 - [Requirements](#requirements)
-- [Communication](#communication)
 - [Installation](#installation)
 - [Usage](#usage)
     - [Configuration](#configuration)
@@ -26,6 +24,8 @@ Developed for both ease of use and familiarity, Snrlax uses concise syntax and m
     - [Response Handling](#handle-a-response)
     - [Response Validation](#response-validation)
     - [Response Caching](#response-caching)
+- [Extension Libraries](#extension-libraries)
+- [Communication](#communication)
 - [Open Radars](#open-radars)
 - [FAQ](#faq)
 - [Credits](#credits)
@@ -68,26 +68,11 @@ Developed for both ease of use and familiarity, Snrlax uses concise syntax and m
 - [ ] Comprehensive Unit and Integration Test Coverage
 - [ ] [Complete Documentation](http://cocoadocs.org/docsets/Snrlax)
 
-## Extension Libraries
-
-While Snrlax will unequivocally remain a "no fluff" library for Swift Networking, additional components have been created to compliment the Snrlax ecosystem. These can additionally be included in your project, with specific instructions within each repository.
-
-- [SnrlaxS3](https://github.com/rwolande/SnrlaxS3) - An AWS S3-focused library that extends media management to support S3 buckets.
-- [SnrlaxUI](https://github.com/rwolande/SnrlaxUI) - A User Interface library that extends UIKit staples to optionally bind with data, while also providing elegant widgets for image, gif, & video media.
-
 ## Requirements
 
 - iOS 8.0+
 - Xcode 8.1+
 - Swift 3.0+
-
-## Communication
-
-<!-- - If you **need help**, use [Stack Overflow](http://stackoverflow.com/questions/tagged/snrlax). (Tag 'snrlax') -->
-<!-- - If you'd like to **ask a general question**, use [Stack Overflow](http://stackoverflow.com/questions/tagged/snrlax). -->
-- If you **found a bug**, open an issue.
-- If you **have a feature request**, open an issue.
-- If you **want to contribute**, submit a pull request.
 
 ## Installation
 
@@ -465,6 +450,22 @@ Snrlax.shared.request(endpoint: endpoint)
 This allows common RESTful practices to be mirrored in Swift. Routes can be recycled with different appendments (as seen above) and also with different methods.
 
 > The `SnrlaxEndpoint.rest_method` parameter defaults to `.get`.
+
+
+## Extension Libraries
+
+While Snrlax will unequivocally remain a "no fluff" library for Swift Networking, additional components have been created to compliment the Snrlax ecosystem. These can additionally be included in your project, with specific instructions within each repository.
+
+- [SnrlaxS3](https://github.com/rwolande/SnrlaxS3) - An AWS S3-focused library that extends media management to support S3 buckets.
+- [SnrlaxUI](https://github.com/rwolande/SnrlaxUI) - A User Interface library that extends UIKit staples to optionally bind with data, while also providing elegant widgets for image, gif, & video media.
+
+## Communication
+
+<!-- - If you **need help**, use [Stack Overflow](http://stackoverflow.com/questions/tagged/snrlax). (Tag 'snrlax') -->
+<!-- - If you'd like to **ask a general question**, use [Stack Overflow](http://stackoverflow.com/questions/tagged/snrlax). -->
+- If you **found a bug**, open an issue.
+- If you **have a feature request**, open an issue.
+- If you **want to contribute**, submit a pull request.
 
 ## Open Radars
 

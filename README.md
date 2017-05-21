@@ -445,17 +445,17 @@ public enum RESTmethod
 These values can be passed as the `method` argument to the `SnrlaxEndpoint` API:
 
 ```swift
-#Case 1
-
 let USER_ROUTE = "user"
+
+//Case 1
 let endpoint = SnrlaxEndpoint(literal: USER_ROUTE + "/2") //Method defauls to get
 Snrlax.shared.request(endpoint: endpoint)
 
-#Case 2
+//Case 2
 let endpoint = SnrlaxEndpoint(literal: USER_ROUTE + "/2", method: .GET) //Same as above
 Snrlax.shared.request(endpoint: endpoint)
 
-Case 3
+//Case 3
 let endpoint = SnrlaxEndpoint(literal: USER_ROUTE, method: .POST) //Post method will be used
 Snrlax.shared.request(endpoint: endpoint)
 ```

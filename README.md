@@ -280,6 +280,7 @@ class ViewController: UIViewController, QueryDelegate
 Handling the `Response` of a `Request` made in Snrlax is straight forward. All keys from your API will be root-keys of the body `Dictionary` passed in `successful_query()`.
 
 - In the event a `JSONArray` is returned from your API at the root level, the body will have 1-root key: "data", which will map to your array values.
+
 -- At least one key will always be included in Underlying data will be found at the root level. This minimizes much of the 'Swift Optional Dance' which also keeping your data concise and most easily processed.
 
 Finally, an actually practical implementation of `successful_query()`

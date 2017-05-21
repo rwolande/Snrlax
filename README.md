@@ -162,7 +162,7 @@ import Snrlax
 ```
 3) [Configure](#configuration) your instance to reflect your API.
 4) [Send Your Requests](#making-a-reqest)
-5) []
+5) [Manage Your Result](#response-management)
 
 ### Configuration
 

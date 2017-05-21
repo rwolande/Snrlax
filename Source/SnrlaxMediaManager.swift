@@ -24,6 +24,11 @@ public class SnrlaxMediaManager
                 }
         }
         
+        init()
+        {
+                self.update(media_types: MediaType.all())
+        }
+        
         private var caches = [MediaType:SnrlaxMediaCache]()
         
         func update(media_types: [MediaType])

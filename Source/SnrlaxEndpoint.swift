@@ -42,10 +42,19 @@ public struct SnrlaxEndpoint
         
         var url: URL?
         {
-                var complete = "https://"
+                var complete = "http"
                 if let configuration = Snrlax.shared.configuration
                 {
+                        if configuration.ssl
+                        {
+                                complete += "s"
+                        }
+                        complete += "://"
                         complete += configuration._host
+                }
+                else
+                {
+                        complete += "://"
                 }
                 complete += literal
                 return URL(string: complete)

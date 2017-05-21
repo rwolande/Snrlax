@@ -11,13 +11,24 @@ import Foundation
 //Protocol for managing the result of the query
 @objc public protocol QueryDelegate: class
 {
-        func successful_query(query: SnrlaxQuery, body: [String:AnyObject]) //body is returned data from endpoint
-        func failed_query(query: SnrlaxQuery, error: NSError?)
+        @objc optional func successful_query(query: SnrlaxQuery, body: [String:AnyObject]) //body is returned data from endpoint
+        @objc optional func failed_query(query: SnrlaxQuery, error: NSError?)
 }
 
 @objc public protocol QueryDataSource: class
 {
-        @objc optional func body(query: SnrlaxQuery) -> [String:AnyObject] //populate with non-common parameters
+        @objc optional func body(query: SnrlaxQuery) -> [String:Any] //populate with non-common parameters
+}
+
+public class DefaultDataSource: QueryDataSource
+{
+        static let shared = DefaultDataSource()
+        public func body(query: SnrlaxQuery) -> [String:Any]
+        {
+                return [
+                        "coordinate": [
+                                "latitude": "42.24", "longitude" : "-83.1"]]
+        }
 }
 
 /*Best practice may be to subclass wQuery, overriding global_delegate and add_extras_to_body() */
@@ -38,15 +49,15 @@ public class SnrlaxQuery: NSObject, URLSessionDelegate, URLSessionTaskDelegate//
         
         private func success(body: [String:AnyObject])
         {
-                Snrlax.shared.global_parser_delegate?.successful_query(query: self, body: body)
-                self.parser_delegate?.successful_query(query: self, body: body)
+                Snrlax.shared.global_parser_delegate?.successful_query?(query: self, body: body)
+                self.parser_delegate?.successful_query?(query: self, body: body)
                 Snrlax.shared.finished_request()
         }
         
         private func failure(error: NSError?)
         {
-                Snrlax.shared.global_parser_delegate?.failed_query(query: self, error: error)
-                self.parser_delegate?.failed_query(query: self, error: error)
+                Snrlax.shared.global_parser_delegate?.failed_query?(query: self, error: error)
+                self.parser_delegate?.failed_query?(query: self, error: error)
                 Snrlax.shared.finished_request()
         }
         

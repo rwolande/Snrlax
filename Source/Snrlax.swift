@@ -13,8 +13,9 @@ public class SnrlaxServiceConfiguration
 {
         let _host: String!
         let _header_keys: [String:String]!
+        var ssl: Bool = true
         
-        init(host: String = "", header_keys: [String:String] = [String:String]())
+        init(host: String, header_keys: [String:String] = [String:String]())
         {
                 self._host = host
                 self._header_keys = header_keys

@@ -4,28 +4,14 @@
 
 [![Twitter](https://img.shields.io/badge/twitter-@SnrlaxSwift-blue.svg?style=flat)](http://twitter.com/SnrlaxSwift)
 
-Swift-Native REST-compliant Library for Asynchronous Transactions
-
 <!-- [![Build Status](https://travis-ci.org/rwolande/Snrlax.svg?branch=master)](https://travis-ci.org/rwolande/Snrlax)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Alamofire.svg)](https://img.shields.io/cocoapods/v/Alamofire.svg)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/cocoapods/p/Alamofire.svg?style=flat)](http://cocoadocs.org/docsets/Alamofire)-->
 
-**Snrlax is the leanest HTTP(S) networking library for iOS**, making it wildly easy to _securely_ exchange information with any remote API. 
+**Snrlax** (Swift-Native REST-compliant Library for Asynchronous Transactions) **is the leanest HTTP(S) networking library for iOS**, making it wildly easy to _securely_ exchange information with any remote API. 
 
 Developed for both ease of use and familiarity, Snrlax uses concise syntax and method delegation to fit in swimmingly alongside the Swift 3 standard library. This allows new iOS developers to develop future-leaning habits while still allowing experienced developers to follow patterns they are already comfortable with.
-
-Written entirely and originally in Swift, Snrlax
-
--Removes the need for Obj-C bridging
-
--Leaves behind outdated patterns found in libraries based on pre-Swift practices
-
--Allows dynamic response managment, through both **polymorphism** and **delegation**
-
--_Enforces_ asynchronious_ transactions
-
---Much like Snorlax multitasking while RESTing, your application must be multi-thread compliant
 
 - [Features](#features)
 - [Extension Libraries](#extension-libraries)

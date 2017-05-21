@@ -9,7 +9,9 @@
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/cocoapods/p/Alamofire.svg?style=flat)](http://cocoadocs.org/docsets/Alamofire)-->
 
-**Snrlax** (Swift-Native REST-compliant Library for Asynchronous Transactions) **is the leanest HTTP(S) networking library for iOS**, making it wildly easy to _securely_ exchange information with any remote API. 
+**S**wift-**N**ative **R**EST-compliant **L**ibrary for **A**synchronous **T**ransactions
+
+**Snrlax** is the leanest HTTP(S) networking library for iOS, making it wildly easy to _securely_ exchange information with any remote API. 
 
 Developed for both ease of use and familiarity, Snrlax uses concise syntax and method delegation to fit in swimmingly alongside the Swift 3 standard library. This allows new iOS developers to develop future-leaning habits while still allowing experienced developers to follow patterns they are already comfortable with.
 

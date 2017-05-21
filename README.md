@@ -161,8 +161,8 @@ To use Snrlax, there are a few easy steps you'll want to follow:
 import Snrlax
 ```
 3) [Configure](#configuration) your instance to reflect your API.
-4) [Send Your Requests](#making-a-reqest)
-5) [Manage Your Result](#response-management)
+4) [Send Your Requests](#making-a-request-querydatasource)
+5) [Manage Your Result](#response-management-querydelegate)
 
 ### Configuration
 

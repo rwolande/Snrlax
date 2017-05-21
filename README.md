@@ -21,15 +21,7 @@ Developed for both ease of use and familiarity, Snrlax uses concise syntax and m
 - [Communication](#communication)
 - [Installation](#installation)
 - [Usage](#usage)
-    - **Intro** [Configuration](#configuration), [Making a Request](#making-a-request), [QueryDelegate](#querydelegate), [QueryDataSource](#querydatasource)
-	- **HTTP** [HTTP Methods](#http-methods), [Parameter Encoding](#parameter-encoding), [HTTP Headers](#http-headers), [Authentication](#authentication)
-	- **Large Data** [Downloading Data to a File](#downloading-data-to-a-file), [Uploading Data to a Server](#uploading-data-to-a-server)
-	- **Tools** [Statistical Metrics](#statistical-metrics), [cURL Command Output](#curl-command-output)
-- [Advanced Usage](#advanced-usage)
-	- **URL Session -** [Session Manager](#session-manager), [Session Delegate](#session-delegate), [Request](#request)
-	- **Routing -** [Routing Requests](#routing-requests), [Adapting and Retrying Requests](#adapting-and-retrying-requests)
-	- **Model Objects -** [Custom Response Serialization](#custom-response-serialization)
-	- **Connection -** [Security](#security), [Network Reachability](#network-reachability)
+    - **Intro** [Configuration](#configuration), [Making a Request](#making-a-request), [Response Validation](#response-validation), [Response Caching](#response-caching)
 - [Open Radars](#open-radars)
 - [FAQ](#faq)
 - [Credits](#credits)
@@ -162,6 +154,16 @@ dependencies: [
 
 ## Usage
 
+To use Snrlax, there are a few easy steps you'll want to follow:
+1) [Install Snrlax](#installation)
+2) Import Snrlax in relevant Swift scripts
+```swift
+import Snrlax
+```
+3) [Configure](#configuration) your instance to reflect your API.
+4) [Send Your Requests](#making-a-reqest)
+5) []
+
 ### Configuration
 
 A singleton for Snrlax will be your primary instance
@@ -208,7 +210,7 @@ class ViewController: UIViewController, QueryDataSource
 
 Including the data_source parameter:
 ```swift
-class ViewController: UIViewController, QueryDelegate
+class ViewController: UIViewController, QueryDataSource
 {
 
         override func viewDidLoad()
@@ -216,7 +218,7 @@ class ViewController: UIViewController, QueryDelegate
                 super.viewDidLoad()
                 
                 let endpoint = SnrlaxEndpoint(literal: "user/2") //Domain-specific route
-                Snrlax.shared.request(endpoint: endpoint, parser_delegate: self, data_source: self) //data_source -> QueryDataSource
+                Snrlax.shared.request(endpoint: endpoint, parser_delegate: nil, data_source: self) //data_source -> QueryDataSource
         }
         
         //Will now be called back when forming request
@@ -242,7 +244,7 @@ func successful_query(query: SnrlaxQuery, body: [String : AnyObject])
 func failed_query(query: SnrlaxQuery, error: NSError?)
 ```
 
-A much more practical implementation:
+A slightly more practical implementation:
 ```swift
 class ViewController: UIViewController, QueryDelegate
 {
@@ -273,15 +275,43 @@ Handling the `Response` of a `Request` made in Snrlax is straight forward. All k
 -In the event a `JSONArray` is returned from your API at the root level, the body will have 1-root key: "data", which will map to your array values.
 >At least one key will always be included in Underlying data will be found at the root level. This minimizes much of the 'Swift Optional Dance' which also keeping your data concise and most easily processed.
 
->Both QueryDelegate functions are optional so all conforming classes will compile.
+Finally, an actually practical implementation of `successful_query()`
 ```swift
-class ViewController: UIViewController, QueryDelegate, QueryDataSource {
+
+let API_MESSAGES_KEY = "messages"
+let API_META_KEY = "meta"
+
+func successful_query(query: SnrlaxQuery, body: [String : Any])
+{
+
+	guard let raw_messages = body[API_MESSAGES_KEY] as? [Any]
+	else
+	{
+		//No messages
+		return
+	}
+
+	for message in raw_messages
+	{
+		//Process each message as you like: local memory, core data, etc.
+	}
+
+	DispatchQueue.main.async (execute: {
+		//Optionally cease displaying any 'loading' widgets or update heuristics
+                                self.tableView.reloadData()
+                })
 }
 ```
 
 #### Inheriting QueryDataSource & QueryDelegate
 
 We encourage Snrlax users to create a pair of custom classes to conform to QueryDelegate and QueryDataSource.
+
+>Both QueryDelegate functions are optional so all conforming classes will compile.
+```swift
+class ViewController: UIViewController, QueryDelegate, QueryDataSource {
+}
+```
 
 ##### Default Body Data
 In the case you consistently provide default body parameters, Snrlax offers a boiler-plate minimal solution by always including a body when Snrlax.shared.global_data_source is set.
@@ -421,6 +451,15 @@ Snrlax.shared.request(endpoint: endpoint)
 This allows common RESTful practices to be mirrored in Swift. Routes can be recycled with different appendments (as seen above) and also with different methods.
 
 > The `SnrlaxEndpoint.rest_method` parameter defaults to `.get`.
+
+## Open Radars
+
+There are currently no open radars for Snrlax! Good job guys!
+
+## FAQ
+
+>Where does the name come from?
+`SNRLAX` is an acronym for **S**wift-**N**ative **R**EST-compliant **L**ibrary for **A**synchronous **T**ransactions. We also couldn't resist the play on words with REST.
 
 ## Credits
 

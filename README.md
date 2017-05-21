@@ -42,6 +42,7 @@ Developed for both ease of use and familiarity, Snrlax uses concise syntax and m
 	- [x] Dynamically display when requests are in progress and hide when all requests are complete or suspended
 	- [ ] Optional delegate for additional custom 'loading' widgets (UI elements)
 - [x] HTTP Response Code Validation by Default
+- [x] Easily customizable request header Key-Value Pairs
 - [x] Protocols for variable request results
 - [x] Authentication with URLCredential
 - [x] _Enforced_ asynchronious transactions
@@ -174,6 +175,18 @@ HTTPS is assumed by default. We encourage you to use SSL (HTTPS) for all data tr
 
 ```swift
 Snrlax.shared.configuration!.ssl = false //HTTP://\(YOUR_HOST) Requests
+```
+
+If you need to include custom header Key-Value pairs, simply include them in your Snrlax configuration initializer.
+
+```swift
+Snrlax.shared.configuration = SnrlaxServiceConfiguration(host: YOUR_HOST_DOMAIN, header_keys: ["user":"abc"])
+```
+
+You can also override the current header keys whenever you like.
+
+```swift
+Snrlax.shared.configuration!.header_keys = ["user":"def","extra":"param"]
 ```
 
 ### Making a Request

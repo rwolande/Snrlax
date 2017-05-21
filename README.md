@@ -21,11 +21,10 @@ Developed for both ease of use and familiarity, Snrlax uses concise syntax and m
 - [Communication](#communication)
 - [Installation](#installation)
 - [Usage](#usage)
-    - **Intro** [Configuration](#configuration), [Making a Request](#making-a-request), [Response Validation](#response-validation), [Response Caching](#response-caching)
+    - **Intro** [Configuration](#configuration), [Making a Request](#making-a-request), [Response Handling](#response-handing), [Response Validation](#response-validation), [Response Caching](#response-caching)
 - [Open Radars](#open-radars)
 - [FAQ](#faq)
 - [Credits](#credits)
-- [Donations](#donations)
 - [License](#license)
 
 ## Features
@@ -167,8 +166,8 @@ import Snrlax
 
 **0-1x per request**
 
-4) [Make Your Request](#making-a-request)
-5) [Manage Your Result](#response-management)
+4) [Make Request](#making-a-request)
+5) [Handle Response](#response-handing)
 
 ### Configuration
 
@@ -240,6 +239,8 @@ class ViewController: UIViewController, QueryDataSource
 }
 ```
 
+### Handle a Response
+
 #### Response Management: QueryDelegate
 
 One of the many advantages of Snrlax is it's rather Swifty response management. Following Apple's lead, Snrlax opts to use delegatation (protocol inheritance) over closures for response management. Any class which will process and parse a JSON result must conform to the QueryDelegate protocol.
@@ -281,7 +282,7 @@ Handling the `Response` of a `Request` made in Snrlax is straight forward. All k
 
 - In the event a `JSONArray` is returned from your API at the root level, the body will have 1-root key: "data", which will map to your array values.
 
-- At least one key will always be included in Underlying data will be found at the root level. This minimizes much of the 'Swift Optional Dance' which also keeping your data concise and most easily processed.
+- At least one key will always be included in Underlying data will be found at the root level. This minimizes much of the 'Swift Optional Dance' while also keeping your data concise and most easily processed.
 
 Finally, an actually practical implementation of `successful_query()`
 ```swift

@@ -155,13 +155,16 @@ dependencies: [
 ## Usage
 
 To use Snrlax, there are a few easy steps you'll want to follow:
+
 1x per project
 1) [Install Snrlax](#installation)
 2) Import Snrlax in relevant Swift scripts
+
 ```swift
 import Snrlax
 ```
 0-1x per request
+
 3) [Configure](#configuration) your instance to reflect your API.
 4) [Make Your Requests](#making-a-request-querydatasource)
 5) [Manage Your Result](#response-management-querydelegate)
